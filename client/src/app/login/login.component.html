@@ -1,0 +1,22 @@
+<div class="container">
+
+ 
+    <div class="card w-50 mx-auto p-5 text-center">
+ 
+        <h2> Welcome back :) </h2>
+ 
+        <form class="mt-4" [formGroup]="loginForm" (ngSubmit)="login()">
+ 
+            <input  formControlName="email" type="email" placeholder="E-mail"   class="form-control m-2" >
+            <p class="text-danger text-start" *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">Email Invalid</p>
+ 
+            <input  formControlName="password" type="password" placeholder="Password"  class="form-control m-2"  >
+            <p class="text-danger text-start" *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">Password Invalid</p>
+ 
+            <button [disabled]="loginForm.invalid" type="submit"  class="btn btn-outline-dark form-control m-2">Login</button>
+ 
+            <a  class="lead text-dark">Create Account</a>
+           
+        </form>
+ 
+    </div>

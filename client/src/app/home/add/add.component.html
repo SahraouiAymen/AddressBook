@@ -1,0 +1,37 @@
+<div class="container my-5">
+ 
+    <h3 class="text-light"> Create New Address </h3>
+ 
+    <div class="card mt-5 p-5">
+ 
+        <div class="row">
+ 
+            <div class="col-lg-6 text-center">
+                <img src="assets/address.gif" class="w-100" alt="">
+            </div>
+ 
+ 
+            <div class="col-lg-6 p-2"   >
+ 
+                <form [formGroup]="ContactForm" (ngSubmit)="ajout()" >
+ 
+                    <input  formControlName="name" type="text" placeholder="name"  [ngClass]="{'form-control m-2' : true , 'err' : ContactForm.controls['name'].touched && ContactForm.controls['name'].invalid}" >
+                    <input  formControlName="lastname" type="text" placeholder="lastname"  [ngClass]="{'form-control m-2' : true , 'err' : ContactForm.controls['lastname'].touched && ContactForm.controls['lastname'].invalid}" >
+                    <input  formControlName="email" type="email" placeholder="email" [ngClass]="{'form-control m-2' : true , 'err' : ContactForm.controls['email'].touched && ContactForm.controls['email'].invalid}" >
+                    <input  formControlName="tel" type="text" placeholder="tel" [ngClass]="{'form-control m-2' : true , 'err' : ContactForm.controls['tel'].touched && ContactForm.controls['tel'].invalid}">
+                    <input  formControlName="address" type="text" placeholder="Address" [ngClass]="{'form-control m-2' : true , 'err' : ContactForm.controls['address'].touched && ContactForm.controls['address'].invalid}">
+                    
+               
+                    <button [disabled]="ContactForm.invalid"  type="submit" class="btn btn-outline-dark m-2 form-control"> Create </button>
+               
+                </form>
+ 
+            </div>
+ 
+        </div>
+ 
+ 
+    </div>
+ 
+ 
+</div>
